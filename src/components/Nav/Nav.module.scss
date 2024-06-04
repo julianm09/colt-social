@@ -1,0 +1,40 @@
+@import '@/styles/colors.scss';
+
+.nav {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  padding: 0 10%;
+  box-sizing: border-box;
+  background: $bg-color;
+
+  .logo {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  &-right {
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  &-link {
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+    cursor: pointer;
+  }
+
+  &-button {
+    background: $highlight-color;
+    color: $text-color-dark;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+}
