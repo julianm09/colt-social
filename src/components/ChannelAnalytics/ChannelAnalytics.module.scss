@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 
   .label {
     font-size: 36px;
@@ -14,6 +15,10 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media only screen and (max-width: 700px) {
+      font-size: 24px;
+    }
   }
 
   .input-container {
@@ -21,6 +26,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 
     .input {
       height: 40px;
@@ -33,6 +39,10 @@
       padding: 0 20px;
       text-align: center;
       margin-bottom: 20px;
+
+      @media only screen and (max-width: 700px) {
+        width: 80vw;
+      }
     }
 
     .button {
@@ -46,9 +56,16 @@
       background: $highlight-color;
       color: $text-color-dark;
       font-weight: 700;
-      padding: 10px 20px;
+      padding: 0px 20px;
       border-radius: 50px;
       cursor: pointer;
+      -moz-box-sizing: content-box; /* or `border-box` */
+      -webkit-box-sizing: content-box;
+      box-sizing: content-box;
+
+      @media only screen and (max-width: 700px) {
+        width: 80vw;
+      }
     }
   }
 }

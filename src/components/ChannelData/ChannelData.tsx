@@ -7,33 +7,71 @@ interface ChannelDataProps {
 
 const ChannelData: React.FC<ChannelDataProps> = ({ channelData }) => {
   return (
-    <div className={styles['container']}>
+    <>
       {channelData && (
-        <div>
-          <img
-            src={channelData.items[0].snippet.thumbnails.default.url}
-            alt="Channel Thumbnail"
-          />
-          <h2>{channelData.items[0].snippet.title}</h2>
-          <p>Username: {channelData.items[0].snippet.customUrl || 'N/A'}</p>
-          <p>Description: {channelData.items[0].snippet.description}</p>
-          <p>Subscribers: {channelData.items[0].statistics.subscriberCount}</p>
-          <p>Views: {channelData.items[0].statistics.viewCount}</p>
-          <p>Videos: {channelData.items[0].statistics.videoCount}</p>
-          <p>Country: {channelData.items[0].snippet.country || 'N/A'}</p>
-          <p>
-            Channel Type:{' '}
-            {channelData.items[0].snippet.customUrl ? 'Custom' : 'Standard'}
-          </p>
-          <p>
-            User Created Date:{' '}
-            {new Date(
-              channelData.items[0].snippet.publishedAt
-            ).toLocaleDateString()}
-          </p>
+        <div className={styles['container']}>
+          <div className={styles['profile-container']}>
+            <img
+              className={styles['thumbnail']}
+              src={channelData.items[0].snippet.thumbnails.default.url}
+              alt="Channel Thumbnail"
+            />
+            <div className={styles['profile-container-info']}>
+              <p className={styles['title']}>
+                {channelData.items[0].snippet.title}
+              </p>
+              <p className={styles['username']}>
+                {channelData.items[0].snippet.customUrl || 'N/A'}
+              </p>
+              <p className={styles['description']}>
+                {channelData.items[0].snippet.description}
+              </p>
+            </div>
+          </div>
+
+          <div className={styles['stats-container']}>
+            <div className={styles['stats-container-info']}>
+              <p className={styles['label']}>Subscribers</p>
+              <p className={styles['stat']}>
+                {channelData.items[0].statistics.subscriberCount}
+              </p>
+            </div>
+            <div className={styles['stats-container-info']}>
+              <p className={styles['label']}>Views</p>
+              <p className={styles['stat']}>
+                {channelData.items[0].statistics.viewCount}
+              </p>
+            </div>
+            <div className={styles['stats-container-info']}>
+              <p className={styles['label']}>Videos</p>
+              <p className={styles['stat']}>
+                {channelData.items[0].statistics.videoCount}
+              </p>
+            </div>
+            <div className={styles['stats-container-info']}>
+              <p className={styles['label']}>Country</p>
+              <p className={styles['stat']}>
+                {channelData.items[0].snippet.country || 'N/A'}
+              </p>
+            </div>
+            <div className={styles['stats-container-info']}>
+              <p className={styles['label']}>Channel Type</p>
+              <p className={styles['stat']}>
+                {channelData.items[0].snippet.customUrl ? 'Custom' : 'Standard'}
+              </p>
+            </div>
+            <div className={styles['stats-container-info']}>
+              <p className={styles['label']}>User Created</p>
+              <p className={styles['stat']}>
+                {new Date(
+                  channelData.items[0].snippet.publishedAt
+                ).toLocaleDateString()}
+              </p>
+            </div>
+          </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

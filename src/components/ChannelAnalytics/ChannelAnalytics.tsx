@@ -13,7 +13,7 @@ import ChannelData from '../ChannelData/ChannelData';
 interface ChannelAnalyticsProps {}
 
 const ChannelAnalytics: React.FC<ChannelAnalyticsProps> = ({}) => {
-  const [url, setUrl] = useState('https://www.youtube.com/@gtbshieldgang');
+  const [url, setUrl] = useState('https://www.youtube.com/@todayfriendsbest');
   const [channelData, setChannelData] = useState<any>(null);
 
   const fetchAnalytics = async () => {
@@ -41,7 +41,7 @@ const ChannelAnalytics: React.FC<ChannelAnalyticsProps> = ({}) => {
 
   return (
     <div className={styles['container']}>
-      <h3 className={styles['label']}>Paste Channel URL </h3>
+      <p className={styles['label']}>Paste Channel URL </p>
       <div className={styles['input-container']}>
         <input
           type="text"
