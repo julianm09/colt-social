@@ -1,11 +1,11 @@
-import styles from './ChannelData.module.scss';
+import styles from './ChannelHeader.module.scss';
 import React from 'react';
 
-interface ChannelDataProps {
+interface ChannelHeaderProps {
   channelData: any;
 }
 
-const ChannelData: React.FC<ChannelDataProps> = ({ channelData }) => {
+const ChannelHeader: React.FC<ChannelHeaderProps> = ({ channelData }) => {
   return (
     <>
       {channelData && (
@@ -75,4 +75,4 @@ const ChannelData: React.FC<ChannelDataProps> = ({ channelData }) => {
   );
 };
 
-export default ChannelData;
+export default ChannelHeader;

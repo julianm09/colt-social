@@ -8,7 +8,8 @@ import {
   getChannelIdByUsername,
   getChannelIdByCustomUrl,
 } from '@/api/youtube';
-import ChannelData from '../ChannelData/ChannelData';
+import ChannelHeader from '../ChannelHeader/ChannelHeader';
+import ChannelViews from '../ChannelViews/ChannelViews';
 
 interface ChannelAnalyticsProps {}
 
@@ -54,7 +55,8 @@ const ChannelAnalytics: React.FC<ChannelAnalyticsProps> = ({}) => {
           Get Analytics
         </button>
       </div>
-      {channelData && <ChannelData channelData={channelData} />}
+      {channelData && <ChannelHeader channelData={channelData} />}
+      {channelData && <ChannelViews channelData={channelData} />}
     </div>
   );
 };

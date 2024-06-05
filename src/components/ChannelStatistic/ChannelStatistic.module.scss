@@ -1,0 +1,25 @@
+@import '@/styles/colors.scss';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  @media only screen and (max-width: 1250px) {
+    margin-bottom: 20px;
+  }
+}
+
+.headline {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.statistic {
+  font-size: 18px;
+  font-weight: 400;
+}
